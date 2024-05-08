@@ -1,0 +1,83 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "."
+        ]
+      },
+      "typescript": {
+        "project": [
+          "./tsconfig.json"
+        ]
+      }
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:import/typescript",
+    "plugin:react/recommended"
+  ]
+,
+  "plugins": ["react"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "arrow-body-style": "off",
+    "indent": ["warn", 2],
+    "consistent-return": "off",
+    "no-else-return": "off",
+    "global-require": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "new-cap": "off",
+    "arrow-parens": "off",
+    "prefer-destructuring": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": [1, { "ignore": ["children"] }],
+    "import/no-extraneous-dependencies": [
+      "warn"
+    ],
+    "import/prefer-default-export": "off",
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "ignorePatterns": ["dist/", "node_modules/", "build/", "tailwind.config.ts", "tailwind.config.js", "postcss.config.js"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  }
+}
